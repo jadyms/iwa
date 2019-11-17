@@ -1,68 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="TrackMtStudies.xsl"?>
+
+
 <todo>
     <category name="Databases">
         <theme themeDue="true">
             <assignement>Views</assignement>
-            <hours>4.95</hours>
+            <hoursPlanned>4</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
         <theme>
             <assignement>CA 1 - Submit</assignement>
-            <hours>7.50</hours>
+            <hoursPlanned>2</hoursPlanned>
+            <hoursDone>1</hoursDone>
         </theme>
         <theme>
             <assignement>CA 1 Part B - Functions</assignement>
-            <hours>8.50</hours>
+            <hoursPlanned>1</hoursPlanned>
+            <hoursDone>1</hoursDone>
         </theme>
     </category>
     <category name="IWA">
         <theme>
             <assignement>JavaScript</assignement>
-            <hours>4</hours>
+            <hoursPlanned>4</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
         <theme>
             <assignement>JSON</assignement>
-            <hours>8</hours>
+            <hoursPlanned>8</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
         <theme themeDue="true">
             <assignement>XML</assignement>
-            <hours>6</hours>
+            <hoursPlanned>6</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
         <theme themeDue="true">
             <assignement>Web Dev foundation</assignement>
-            <hours>5.25</hours>
+            <hoursPlanned>5</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
         <theme>
             <assignement>Server http request</assignement>
-            <hours>1</hours>
+            <hoursPlanned>1</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
     </category>
     <category name="Data Structure">
         <theme>
             <assignement>CA 1 </assignement>
-            <hours>7</hours>
+            <hoursPlanned>7</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
         <theme>
             <assignement>Doubly Linked List</assignement>
-            <hours>6</hours>
+            <hoursPlanned>6</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
         <theme themeDue="true">
             <assignement>Binary Tree</assignement>
-            <hours>7</hours>
+            <hoursPlanned>7</hoursPlanned>
+            <hoursDone>4</hoursDone>
         </theme>
     </category>
     <category name="Lab">
         <theme>
             <assignement>Review Routing Protocols</assignement>
-            <hours>19</hours>
+            <hoursPlanned>1</hoursPlanned>
+            <hoursDone>1</hoursDone>
         </theme>
         <theme>
             <assignement>HTML</assignement>
-            <hours>1</hours>
+            <hoursPlanned>1</hoursPlanned>
+            <hoursDone>1</hoursDone>
         </theme>
         <theme themeDue="true">
             <assignement>Project </assignement>
-            <hours>9</hours>
+            <hoursPlanned>9</hoursPlanned>
+            <hoursDone>1</hoursDone>
+
         </theme>
     </category>
 </todo>
