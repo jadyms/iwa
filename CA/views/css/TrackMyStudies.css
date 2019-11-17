@@ -1,0 +1,81 @@
+ XML {
+	display:none;
+} 
+body {
+	background: rgb(253,253,150);
+    font-family: "Nunito", sans-serif;
+	margin: 0;
+	text-align: left;
+	color:#09020f;
+}
+.container{
+    padding-top: 0;
+    margin-top: 1%;
+}
+ .container-table {
+  max-height: 300px;
+  overflow: scroll;
+      margin-left: 10%;
+         margin-right: 10%;
+         
+      
+ 
+}
+th{
+    position: sticky;
+}
+     
+
+#jumbotron {
+    background: rgb(240, 186, 8);
+    color:#09020f;
+   }
+
+h2 {
+	text-align: center;
+    font-family: "Nunito", sans-serif;
+	font-weight: 100;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	color: red;
+	margin-top: 10px;
+}
+
+th{
+      background: rgb(240, 186, 8);
+      font-family: "Nunito", sans-serif;
+      color:#09020f;
+}
+#category{
+    
+     background: rgb(240, 186, 8, 0.5); 
+     color:#09020f;
+
+}
+p {
+	font-size: 80%;
+	color: #523819;
+}
+table {
+	background-color: rgb(253,253,150);
+	border-color: #000000;
+	border-width: thin;
+	border-collapse: collapse;
+	width: 75%;
+}
+
+td {
+	border-color: #000000;
+	font-size: 100%;
+	color: #523819;
+	padding: 5px;
+}
+img {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 0px;
+}
+.indent {
+	margin-left: 78px;
+}
