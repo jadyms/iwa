@@ -4,7 +4,7 @@
         <html>
             <head>
                 <title>Track My Studies</title>
-                <link href="TrackMyStudies.css" rel="stylesheet" type="text/css" />
+                <link href="/css/TrackMyStudies.css" rel="stylesheet" type="text/css" />
                 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
                    <!-- Including Google Font -->
                  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 			    </script>
             </head>
             <body>
-                <h2 class = "h2">Track My Studies</h2>
+                <h2>Track My Studies</h2>
                 <p>Application to track how much time I am investing studying for each subject.</p>
                 <table id="menuTable" border="1" class="indent">
                     <thead>
