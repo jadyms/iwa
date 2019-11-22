@@ -3,7 +3,7 @@
 
 
 <todo>
-    <category name="Databases">
+    <category name="Databases"> 
         <theme themeDue="true">
             <assignement>Views</assignement>
             <hoursPlanned>4</hoursPlanned>

@@ -2,11 +2,12 @@
 	display:none;
 } 
 body {
-	background: rgb(253,253,150);
+   
     font-family: "Nunito", sans-serif;
 	margin: 0;
 	text-align: left;
 	color:#09020f;
+    
 }
 .container{
     padding-top: 0;
@@ -29,7 +30,8 @@ th{
 #jumbotron {
     background: rgb(240, 186, 8);
     color:#09020f;
-   }
+       padding: 0.5em 0.6em;
+      }
 
 h2 {
 	text-align: center;
@@ -62,13 +64,25 @@ table {
 	border-width: thin;
 	border-collapse: collapse;
 	width: 75%;
+    line-height:1px;
+   
+     
 }
+tr {
+
+
+height:0.5px;               
+}
+
+.dropup {margin-top:120px;}
+
 
 td {
 	border-color: #000000;
 	font-size: 100%;
 	color: #523819;
-	padding: 5px;
+	padding: 2px;
+  
 }
 img {
 	float: left;
@@ -78,4 +92,14 @@ img {
 }
 .indent {
 	margin-left: 78px;
+}
+/* Template from https://www.jquery-az.com/bootstrap-4-navbar-menu-navigation-header-10-templates/ */
+.navbar{
+ 
+background: rgb(224, 160, 64);
+ 
+background: -webkit-linear-gradient(to right, rgb(250, 94, 172), #FF8C00, #40E0D0);
+ 
+background: linear-gradient(to right,  rgb(250, 94, 172), #FF8C00, #40E0D0);
+ 
 }
