@@ -1,12 +1,17 @@
- XML {
+ /* XML {
 	display:none;
-} 
+}  */
 body {
    
     font-family: "Nunito", sans-serif;
 	margin: 0;
 	text-align: left;
 	color:#09020f;
+    background-color: rgba(243, 190, 76, 0.712);
+    /* background: url("/css/books.jpg"); */
+    
+		background-size: cover;
+		background-position: center;
     
 }
 .container{
@@ -22,6 +27,8 @@ body {
       
  
 }
+
+
 th{
     position: sticky;
 }
@@ -39,8 +46,7 @@ h2 {
 	font-weight: 100;
 	font-size: 2.5rem;
 	text-transform: uppercase;
-	color: red;
-	margin-top: 10px;
+		margin-top: 10px;
 }
 
 th{
@@ -76,13 +82,26 @@ height:0.5px;
 
 .dropup {margin-top:120px;}
 
-
-td {
-	border-color: #000000;
-	font-size: 100%;
-	color: #523819;
-	padding: 2px;
-  
+table, th, td {
+     border-collapse: collapse;
+     border: 1px solid black;
+     text-align: center;
+}
+ table {
+     border-collapse: collapse;
+     width:100%;
+     position: relative;
+}
+ td, th {
+     border: 1px solid #999;
+     padding: 0.5rem;
+     text-align: left;
+}
+ th {
+     font-weight: bold;
+}
+.form-group  {
+  display: inline;
 }
 img {
 	float: left;
@@ -91,15 +110,6 @@ img {
 	border: 0px;
 }
 .indent {
-	margin-left: 78px;
-}
-/* Template from https://www.jquery-az.com/bootstrap-4-navbar-menu-navigation-header-10-templates/ */
-.navbar{
- 
-background: rgb(224, 160, 64);
- 
-background: -webkit-linear-gradient(to right, rgb(250, 94, 172), #FF8C00, #40E0D0);
- 
-background: linear-gradient(to right,  rgb(250, 94, 172), #FF8C00, #40E0D0);
+	position: relative;
  
 }
