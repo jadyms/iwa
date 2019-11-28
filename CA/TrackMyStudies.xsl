@@ -21,10 +21,10 @@
                                     <xsl:value-of select="@name" />
                                 </td>
                             </tr>
-                            <xsl:for-each select="theme">
+                            <xsl:for-each select="activity">
                                 <tr>
-                                    <xsl:attribute name="themeDue">
-                                        <xsl:value-of select="boolean(./@themeDue)" />
+                                    <xsl:attribute name="activityDue">
+                                        <xsl:value-of select="boolean(./@activityDue)" />
                                     </xsl:attribute>
                                     <td align="center">
                                         <input name="assignement0" type="checkbox" />

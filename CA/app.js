@@ -30,11 +30,12 @@ function jsToXmlFile(filename, obj, cb) {
 router.post('/post/json', function(req, res){
     function appendJSON(obj){
         console.log(obj);
-        xmlFileToJs('PaddysCafe.xml', function(err, result){
+
+        xmlFileToJs('TrackMyStudies.xml', function(err, result){
             if(err) throw (err);
-                result.cafemenu.section[obj.sec_n].entree.push({'item': obj.item, 'price': obj.price});
+                result.todo.category[obj.sec_n].activity.push({'assignement': obj.assignement, 'hoursPlanned': obj.hoursPlanned, 'hoursDone': obj.hoursDone});
                 console.log(result);
-                jsToXmlFile('PaddysCafe.xml', result, function(err){
+                jsToXmlFile('TrackMyStudies.xml', result, function(err){
                     if(err) console.log(err);
                 })
         })

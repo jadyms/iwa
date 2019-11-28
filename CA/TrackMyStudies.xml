@@ -1,85 +1,116 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?xml-stylesheet type="text/xsl" href="TrackMtStudies.xsl"?>
-
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <todo>
-    <category name="Databases"> 
-        <theme themeDue="true">
-            <assignement>Views</assignement>
-            <hoursPlanned>4</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-        <theme>
-            <assignement>CA 1 - Submit</assignement>
-            <hoursPlanned>2</hoursPlanned>
-            <hoursDone>1</hoursDone>
-        </theme>
-        <theme>
-            <assignement>CA 1 Part B - Functions</assignement>
-            <hoursPlanned>1</hoursPlanned>
-            <hoursDone>1</hoursDone>
-        </theme>
-    </category>
-    <category name="IWA">
-        <theme>
-            <assignement>JavaScript</assignement>
-            <hoursPlanned>4</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-        <theme>
-            <assignement>JSON</assignement>
-            <hoursPlanned>8</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-        <theme themeDue="true">
-            <assignement>XML</assignement>
-            <hoursPlanned>6</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-        <theme themeDue="true">
-            <assignement>Web Dev foundation</assignement>
-            <hoursPlanned>5</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-        <theme>
-            <assignement>Server http request</assignement>
-            <hoursPlanned>1</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-    </category>
-    <category name="Data Structure">
-        <theme>
-            <assignement>CA 1 </assignement>
-            <hoursPlanned>7</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-        <theme>
-            <assignement>Doubly Linked List</assignement>
-            <hoursPlanned>6</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-        <theme themeDue="true">
-            <assignement>Binary Tree</assignement>
-            <hoursPlanned>7</hoursPlanned>
-            <hoursDone>4</hoursDone>
-        </theme>
-    </category>
-    <category name="Lab">
-        <theme>
-            <assignement>Review Routing Protocols</assignement>
-            <hoursPlanned>1</hoursPlanned>
-            <hoursDone>1</hoursDone>
-        </theme>
-        <theme>
-            <assignement>HTML</assignement>
-            <hoursPlanned>1</hoursPlanned>
-            <hoursDone>1</hoursDone>
-        </theme>
-        <theme themeDue="true">
-            <assignement>Project </assignement>
-            <hoursPlanned>9</hoursPlanned>
-            <hoursDone>1</hoursDone>
-
-        </theme>
-    </category>
+  <category name="Databases">
+    <activity themeDue="true">
+      <assignement>Views</assignement>
+      <hoursPlanned>4</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+    <activity>
+      <assignement>CA 1 - Submit</assignement>
+      <hoursPlanned>2</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+    <activity>
+      <assignement>CA 1 Part B - Functions</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+    <activity>
+      <assignement/>
+      <hoursPlanned/>
+      <hoursDone/>
+    </activity>
+    <activity>
+      <assignement/>
+      <hoursPlanned/>
+      <hoursDone/>
+    </activity>
+    <activity>
+      <assignement>fjq</assignement>
+      <hoursPlanned/>
+      <hoursDone/>
+    </activity>
+    <activity>
+      <assignement>yktgyp</assignement>
+      <hoursPlanned/>
+      <hoursDone/>
+    </activity>
+    <activity>
+      <assignement>Assignment Part 2</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+  </category>
+  <category name="IWA">
+    <activity>
+      <assignement>JavaScript</assignement>
+      <hoursPlanned>4</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+    <activity>
+      <assignement>JSON</assignement>
+      <hoursPlanned>8</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+    <activity themeDue="true">
+      <assignement>XML</assignement>
+      <hoursPlanned>6</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+    <activity themeDue="true">
+      <assignement>Web Dev foundation</assignement>
+      <hoursPlanned>5</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+    <activity>
+      <assignement>Server http request</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+  </category>
+  <category name="Data Structure">
+    <activity>
+      <assignement>CA 1 </assignement>
+      <hoursPlanned>7</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+    <activity>
+      <assignement>Doubly Linked List</assignement>
+      <hoursPlanned>6</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+    <activity themeDue="true">
+      <assignement>Binary Tree</assignement>
+      <hoursPlanned>7</hoursPlanned>
+      <hoursDone>4</hoursDone>
+    </activity>
+    <activity>
+      <assignement/>
+      <hoursPlanned/>
+      <hoursDone/>
+    </activity>
+    <activity>
+      <assignement>Ajudar Yuri</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+  </category>
+  <category name="Lab">
+    <activity>
+      <assignement>Review Routing Protocols</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+    <activity>
+      <assignement>HTML</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+    <activity themeDue="true">
+      <assignement>Project </assignement>
+      <hoursPlanned>9</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+  </category>
 </todo>
