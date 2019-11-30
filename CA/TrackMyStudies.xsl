@@ -3,11 +3,9 @@
     <xsl:template match="/">
                      <table id="menuTable" class=" table table-striped table-hover indent">
                             <thead>
-                         
-                            
-                     
-
+                       
                         <tr>
+                            <th scope="col">Delete</th>
                             <th scope="col">Select</th>
                             <th scope="col">Subject</th>
                             <th scope="col">Hours Planned</th>
@@ -17,7 +15,7 @@
                     <tbody>
                         <xsl:for-each select="/todo/category">
                             <tr>
-                                <td colspan="4" id="category"> 
+                                <td colspan="5" id="category"> 
                                     <xsl:value-of select="@name" />
                                 </td>
                             </tr>
@@ -26,6 +24,9 @@
                                     <xsl:attribute name="activityDue">
                                         <xsl:value-of select="boolean(./@activityDue)" />
                                     </xsl:attribute>
+                                     <td align="center">
+                                        <i class="far fa-trash-alt" id="delete"></i>
+                                    </td>
                                     <td align="center">
                                         <input name="assignement0" type="checkbox" />
                                     </td>
