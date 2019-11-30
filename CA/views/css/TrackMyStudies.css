@@ -1,6 +1,8 @@
  /* XML {
 	display:none;
 }  */
+
+
 body {
    
     font-family: "Nunito", sans-serif;
@@ -8,7 +10,8 @@ body {
 	text-align: left;
 	color:#09020f;
     background-color: rgba(243, 190, 76, 0.712);
-    /* background: url("/css/books.jpg"); */
+    padding-bottom: 50px;
+        /* background: url("/css/books.jpg"); */
     
 		background-size: cover;
 		background-position: center;
@@ -23,10 +26,9 @@ body {
   overflow: scroll;
       margin-left: 10%;
          margin-right: 10%;
-         
-      
- 
+    
 }
+
 
 
 th{
