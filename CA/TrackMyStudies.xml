@@ -16,9 +16,14 @@
       <hoursPlanned>1</hoursPlanned>
       <hoursDone>1</hoursDone>
     </activity>
-           </category>
+    <activity>
+      <assignement>fjq</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+  </category>
   <category name="IWA">
-       <activity themeDue="true">
+    <activity themeDue="true">
       <assignement>XML</assignement>
       <hoursPlanned>6</hoursPlanned>
       <hoursDone>4</hoursDone>
@@ -50,7 +55,7 @@
       <hoursPlanned>7</hoursPlanned>
       <hoursDone>4</hoursDone>
     </activity>
-    </category>
+  </category>
   <category name="Lab">
     <activity>
       <assignement>Review Routing Protocols</assignement>

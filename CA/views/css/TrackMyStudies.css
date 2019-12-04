@@ -11,11 +11,20 @@ body {
 	color:#09020f;
     background-color: rgba(243, 190, 76, 0.712);
     padding-bottom: 50px;
-        /* background: url("/css/books.jpg"); */
+       
     
-		background-size: cover;
-		background-position: center;
     
+}
+
+#bottomNav{
+     background: url("/css/books1.jpg");
+       background-size: cover;
+		background-position: bottom;
+        color: white;
+
+
+ 
+
 }
 .container{
     padding-top: 0;
@@ -31,30 +40,47 @@ body {
 
 
 
-th{
+table th{
     position: sticky;
 }
      
 
 #jumbotron {
-    background: rgb(240, 186, 8);
-    color:#09020f;
+    /* background: rgb(240, 186, 8); */
+          background: url("/css/books1.jpg");
+          background-size: cover;
+		background-position: right;
+        
+        
+    
+    color:white;
        padding: 0.5em 0.6em;
+      }
+
+     
+      #jumbotron p{
+             color:white;
+             font-size: 150%;
+               text-shadow: 2px 2px grey;
+             
+
       }
 
 h2 {
 	text-align: center;
     font-family: "Nunito", sans-serif;
-	font-weight: 100;
+	font-weight: 202000;
 	font-size: 2.5rem;
 	text-transform: uppercase;
 		margin-top: 10px;
+          text-shadow: 2px 2px grey;
 }
 
 th{
-      background: rgb(240, 186, 8);
+      background:  rgb(240, 186, 8);
       font-family: "Nunito", sans-serif;
-      color:#09020f;
+      color:white;
+      text-transform: uppercase;
 }
 #category{
     
@@ -62,10 +88,7 @@ th{
      color:#09020f;
 
 }
-p {
-	font-size: 80%;
-	color: #523819;
-}
+
 table {
 	background-color: rgb(253,253,150);
 	border-color: #000000;
@@ -73,31 +96,31 @@ table {
 	border-collapse: collapse;
 	width: 75%;
     line-height:1px;
-   
-     
+         
 }
 tr {
 
 
-height:0.5px;               
+height:0.2px;               
 }
 
 .dropup {margin-top:120px;}
 
-table, th, td {
+/* table, th, td {
      border-collapse: collapse;
      border: 1px solid black;
      text-align: center;
-}
+} */
+
  table {
-     border-collapse: collapse;
+     /* border-collapse: collapse; */
      width:100%;
      position: relative;
 }
  td, th {
      border: 1px solid #999;
      padding: 0.5rem;
-     text-align: left;
+     text-align: center;
 }
  th {
      font-weight: bold;
