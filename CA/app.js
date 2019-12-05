@@ -1,3 +1,6 @@
+// Code from Mikhail - available at:
+// https://github.com/mikhail-cct/CA1-In-class-Demo/blob/master/app.js
+
 var http = require('http'),
     path = require('path'),
     express = require('express'),
