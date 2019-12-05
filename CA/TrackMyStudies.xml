@@ -12,14 +12,9 @@
       <hoursDone>1</hoursDone>
     </activity>
     <activity>
-      <assignement>CA 1 Part B - Functions</assignement>
-      <hoursPlanned>1</hoursPlanned>
-      <hoursDone>1</hoursDone>
-    </activity>
-    <activity>
-      <assignement>fjq</assignement>
-      <hoursPlanned>1</hoursPlanned>
-      <hoursDone>1</hoursDone>
+      <assignement/>
+      <hoursPlanned/>
+      <hoursDone/>
     </activity>
   </category>
   <category name="IWA">
@@ -65,11 +60,6 @@
     <activity>
       <assignement>HTML</assignement>
       <hoursPlanned>1</hoursPlanned>
-      <hoursDone>1</hoursDone>
-    </activity>
-    <activity themeDue="true">
-      <assignement>Project </assignement>
-      <hoursPlanned>9</hoursPlanned>
       <hoursDone>1</hoursDone>
     </activity>
   </category>

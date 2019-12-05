@@ -16,6 +16,10 @@ body {
     
 }
 
+.selected {
+            background-color: #dc3545!important;
+            color: #FFF;
+}
 #bottomNav{
      background: url("/css/books1.jpg");
        background-size: cover;

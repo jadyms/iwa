@@ -69,7 +69,7 @@ router.post('/post/delete', function(req, res) {
     // Function to read in XML file, convert it to JSON, delete the required object and write back to XML file
     xmlFileToJs('TrackMyStudies.xml', function(err, result) {
       if (err) throw (err);
-      //This is where we delete the object based on the position of the section and position of the entree, as being passed on from index.html
+      //This is where we delete the object based on the position of the category and position of the activity, as being passed on from index.html
     //   delete result.cafemenu.section[obj.section].entree[obj.entree];
      delete result.todo.category[obj.category].activity[obj.activity]
       //This is where we convert from JSON and write back our XML file
@@ -103,10 +103,7 @@ router.get('/get/html', function(req, res) {
     console.log(xml); 
     var doc = xmlParse(xml); //Parsing our XML file
     var stylesheet = xmlParse(xsl);//Parsing our XSL file
-
     var result = xsltProcess(doc, stylesheet); //Execute Transformation
-
-
     res.end(result.toString()); //We render the result back to the user converting it to a string before serving
 
 

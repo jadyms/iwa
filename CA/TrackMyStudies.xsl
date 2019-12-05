@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:template match="/">
-                     <table id="menuTable" class=" table table-striped table-hover indent">
+                     <table id="menuTable" class="table table-striped table-hover indent">
                             <thead>
                        
                         <tr>
@@ -20,12 +20,12 @@
                                 </td>
                             </tr>
                             <xsl:for-each select="activity">
-                                <tr>
+                            <tr id="{position()}">
                                     <xsl:attribute name="activityDue">
                                         <xsl:value-of select="boolean(./@activityDue)" />
                                     </xsl:attribute>
                                      <td align="center">
-                                        <i class="far fa-trash-alt" id="delete"></i>
+                                        <i class="far fa-trash-alt" id="dlt"></i>
                                     </td>
                                     <td align="center">
                                         <input name="assignement0" type="checkbox" />
