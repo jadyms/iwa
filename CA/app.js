@@ -70,8 +70,7 @@ router.post('/post/delete', function(req, res) {
     xmlFileToJs('TrackMyStudies.xml', function(err, result) {
       if (err) throw (err);
       //This is where we delete the object based on the position of the category and position of the activity, as being passed on from index.html
-    //   delete result.cafemenu.section[obj.section].entree[obj.entree];
-     delete result.todo.category[obj.category].activity[obj.activity]
+         delete result.todo.category[obj.category].activity[obj.activity]
       //This is where we convert from JSON and write back our XML file
       jsToXmlFile('TrackMyStudies.xml', result, function(err) {
         if (err) console.log(err);
@@ -114,3 +113,10 @@ server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() 
   var addr = server.address();
   console.log("Server listening at", addr.address + ":" + addr.port);
 });
+
+// cd ..
+// git init
+// git add "Folder Name"
+// git commit 'Name of the commit'
+// git push origin 'Branch'
+// git pull origin 'Branch'

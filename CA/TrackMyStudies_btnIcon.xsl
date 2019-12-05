@@ -26,7 +26,7 @@
                                         <xsl:value-of select="boolean(./@activityDue)" />
                                     </xsl:attribute>
                                      <td align="center">
-                                       <!-- <button  id="delete" class="btn btn-outline-light mb-2"><i class="far fa-trash-alt" id="dlt"></i></button>  -->
+                                       <button  id="delete" class="btn btn-outline-light mb-2"><i class="far fa-trash-alt" id="dlt"></i></button> 
                                        
                                     </td>
                                     <td align="center">

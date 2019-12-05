@@ -7,17 +7,12 @@
       <hoursDone>4</hoursDone>
     </activity>
     <activity>
+      <assignement>CA 1 - Submit</assignement>
+      <hoursPlanned>2</hoursPlanned>
+      <hoursDone>1</hoursDone>
+    </activity>
+    <activity>
       <assignement>fjq</assignement>
-      <hoursPlanned/>
-      <hoursDone/>
-    </activity>
-    <activity>
-      <assignement/>
-      <hoursPlanned/>
-      <hoursDone/>
-    </activity>
-    <activity>
-      <assignement/>
       <hoursPlanned/>
       <hoursDone/>
     </activity>
@@ -66,11 +61,6 @@
       <assignement>HTML</assignement>
       <hoursPlanned>1</hoursPlanned>
       <hoursDone>1</hoursDone>
-    </activity>
-    <activity>
-      <assignement>dfeq</assignement>
-      <hoursPlanned/>
-      <hoursDone/>
     </activity>
   </category>
 </todo>
