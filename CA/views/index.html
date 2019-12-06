@@ -10,6 +10,8 @@
 
    <title>Track My Studies</title>
 
+   
+
   <!-- Bootstrap and CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/TrackMyStudies.css" rel="stylesheet" type="text/css" />
@@ -21,6 +23,18 @@
 
    <!-- Google Fonts -->
    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet"/>
+
+<script src="js/TrackMyStudies.js"></script>
+   <script>
+        window.addEventListener("load", function() {
+            document.forms[1].txtHourPlanned.value = calculateHour('menuTable');
+             <!-- document.forms[1].txtHourPlanned.value = calculateHour('menuTable'); -->
+            document.querySelector("#calcHour").addEventListener("click", function() {
+                document.forms[1].txtHourPlanned.value = calculateHour('menuTable');
+             <!-- document.forms[1].txtHourPlanned.value = calculateHour('menuTable'); -->
+            });
+                   });
+    </script>
                   
 </head>
 
@@ -103,18 +117,20 @@
   <nav class="navbar  py-0 fixed-bottom navbar-light" id="bottomNav" style="background-color: rgb(240, 186, 8)">  
   <a class="navbar-brand" href="#"><i class="fas fa-hourglass-end"></i> CALCULATE HOURS</a>
  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Planned" aria-label="Search"/>
-    <input class="form-control mr-sm-2" type="search" placeholder="Done" aria-label="Search"/>
-    <button class="btn btn-sm btn-outline-dark my-2 my-sm-0" type="submit" id="calculate">Calculate</button>
+ <input class="form-control mr-sm-2" type="search" placeholder="Planned" aria-label="Search" name="txtHourPlanned"/>
+                  <!-- <input type="text" class="form-control" aria-label="Total" name="txtHourPlanned"> -->
+        <input class="form-control mr-sm-2" type="search" placeholder="Done" aria-label="Search" name="txtHourDone"/>
+    <button class="btn btn-sm btn-outline-dark my-2 my-sm-0" type="submit" name="btnCalcHour" value="CalcHour" id="calcHour" "placeholder="Planned" aria-label="Search">Calculate</button>
   </form>
 </nav>
                     
 
  <!-- Bootstrap core JavaScript -->
   <script src="jquery/jquery.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-   <script src="js/TrackMyStudies.js"></script>
+  
+   
  <script src="jquery/table.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
