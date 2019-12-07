@@ -7,58 +7,33 @@
       <hoursDone>4</hoursDone>
     </activity>
     <activity>
-      <assignement>Assignment Part 2</assignement>
+      <assignement>Procedures</assignement>
       <hoursPlanned>1</hoursPlanned>
-      <hoursDone>1</hoursDone>
-    </activity>
-    <activity>
-      <assignement>EER Diagrams</assignement>
-      <hoursPlanned>1</hoursPlanned>
-      <hoursDone>1</hoursDone>
-    </activity>
-    <activity>
-      <assignement>EER Diagrams 2</assignement>
-      <hoursPlanned>1</hoursPlanned>
-      <hoursDone>1</hoursDone>
+      <hoursDone>2</hoursDone>
     </activity>
   </category>
   <category name="IWA">
-    <activity themeDue="true">
-      <assignement>XML</assignement>
-      <hoursPlanned>6</hoursPlanned>
-      <hoursDone>4</hoursDone>
+      <activity>
+      <assignement>HTML</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>2</hoursDone>
     </activity>
-    <activity themeDue="true">
-      <assignement>Web Dev foundation</assignement>
-      <hoursPlanned>5</hoursPlanned>
-      <hoursDone>4</hoursDone>
+<activity>
+      <assignement>JavaScript</assignement>
+      <hoursPlanned>1</hoursPlanned>
+      <hoursDone>2</hoursDone>
     </activity>
-  </category>
+    </category>
   <category name="Data Structure">
-    <activity>
-      <assignement>CA 1 </assignement>
-      <hoursPlanned>7</hoursPlanned>
-      <hoursDone>4</hoursDone>
-    </activity>
     <activity>
       <assignement>Doubly Linked List</assignement>
       <hoursPlanned>6</hoursPlanned>
-      <hoursDone>4</hoursDone>
-    </activity>
-    <activity themeDue="true">
-      <assignement>Binary Tree</assignement>
-      <hoursPlanned>7</hoursPlanned>
       <hoursDone>4</hoursDone>
     </activity>
   </category>
   <category name="Lab">
     <activity>
       <assignement>Review Routing Protocols</assignement>
-      <hoursPlanned>1</hoursPlanned>
-      <hoursDone>1</hoursDone>
-    </activity>
-    <activity>
-      <assignement>HTML</assignement>
       <hoursPlanned>1</hoursPlanned>
       <hoursDone>1</hoursDone>
     </activity>

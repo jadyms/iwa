@@ -1,3 +1,6 @@
+// Code from https://github.com/mikhail-cct/CA1-In-class-Demo/blob/master/views/jquery/table.js
+
+//Draw the table from XML data
 function draw_table(){
     $("#results").empty();
     $.getJSONuncached = function(url) {
@@ -14,7 +17,7 @@ function draw_table(){
     $.getJSONuncached("/get/html")
 }
 
-
+//Select a row to be highlighted
 function select_row()
 {
 	$("#menuTable tbody tr[id]").click(function ()
@@ -27,9 +30,10 @@ function select_row()
 	})
 };
 
+//Delete the selected row
 function delete_row(cat, act)
 {
-	$("#delete").click(function ()
+	$("#delete").one("click", function ()
 	{
 		$.ajax(
 		{
@@ -46,6 +50,7 @@ function delete_row(cat, act)
 	})
 };
 
+//Calling the function
 $(document).ready(function ()
 {
 	draw_table();
