@@ -5,6 +5,8 @@ const path = require('path');
 
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
+//const Track = require('./models/TrackMyStudies');
+const Track = require('./trackController');
 
 const app = express();
 app.use(express.static(path.resolve(__dirname, 'views'))); //We define the views folder as the one where all static content will be served
@@ -34,12 +36,27 @@ app.get('/', function(req, res){
 
 });
 
-//Post routr
-//router.use(express.urlencoded({ extended: true }));
-app.post('/',(req, res) => {
-    console.log(req.body);
-});
+//Post route
+// app.use(express.urlencoded({ extended: true }));
+app.post('/', Track.addActivity);
 
+// Post Route async
+// app.post('/', async (req,res) =>{
+//     const track = new Track({
+//         content: req.body.content
+        
+//     });
+
+//     try{
+//         await track.save();
+//         console.log(req.body);
+//         res.redirect('/');
+//     }catch(e){
+//         console.log(e);
+//         res.redirect('/');
+
+//     }
+// });
 
 // var http = require('http'), //This module provides the HTTP server functionalities
 //     path = require('path'), //The path module provides utilities for working with file and directory paths
