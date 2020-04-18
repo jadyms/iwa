@@ -1,6 +1,7 @@
 
 const TrackMyStudies = require('./models/TrackMyStudies');
 
+//Create new Activity
 exports.addActivity = function(req, res){
     const newActivity = new TrackMyStudies(req.body);
     newActivity.save(function (e, newActivity){
@@ -12,6 +13,7 @@ exports.addActivity = function(req, res){
     });
 };
 
+//Get all activities
 exports.getActivities = function(req, res) {
   TrackMyStudies.find({}, function (err, activity) {
     if (err) {
@@ -21,6 +23,7 @@ exports.getActivities = function(req, res) {
   }); 
 };
 
+//Get specific activity by id
 exports.getActivity= function(req, res) {
   TrackMyStudies.findOne({_id: req.params.id}, function (err, user) {
     if (err) {
@@ -30,6 +33,7 @@ exports.getActivity= function(req, res) {
   }); 
 };
 
+//Delete activity by id
 exports.deleteActivity = function(req, res) {
   TrackMyStudies.findByIdAndDelete(req.params.id, function (err) {
     if (err) {
@@ -40,5 +44,14 @@ exports.deleteActivity = function(req, res) {
      res.sendStatus(200);
     // res.json(activities);
     
+  }); 
+};
+
+exports.updateActivity = function(req, res) {
+  TrackMyStudies.findOneAndUpdate({_id: req.params.id}, req.body, {new: true},function (err, user) {
+    if (err) {
+      res.status(400).json(err);
+    } 
+    res.json(user);
   }); 
 };

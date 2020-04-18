@@ -66,9 +66,14 @@ app.post('/', Track.addActivity);
 //Get all activities route
 app.get('/activities', Track.getActivities);
 
+//Get Specific activity by id
 app.get('/activities/:id', Track.getActivity);
 
+//Delete by id
 app.delete('/activities/:id', Track.deleteActivity);
+
+//Update by id
+app.put('/activities/:id', Track.updateActivity);
 
 
 
