@@ -1,16 +1,22 @@
 // Code from Mikhail - available at:
 // https://github.com/mikhail-cct/CA1-In-class-Demo/blob/master/app.js
 const express = require('express');
+const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
+app.set("view engine", "ejs");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
-//const Track = require('./models/TrackMyStudies');
+const trackModel = require('./models/TrackMyStudies');
 const Track = require('./trackController');
 
-const app = express();
+
 app.use(express.static(path.resolve(__dirname, 'views'))); //We define the views folder as the one where all static content will be served
-app.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be coming in as part of the URL in GET and POST requests
+//app.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be coming in as part of the URL in GET and POST requests
 
 
 
@@ -30,15 +36,42 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
 
 
     //Default route
-app.get('/', function(req, res){
+// app.get('/', function(req, res){
 
-    res.render('index');
+//     res.render('index');
 
-});
+// });
+
+// app.post('/getJson',function(req,res){
+
+//     console.log(res.body.foo);
+
+// });
 
 //Post route
+
+app.get("/", (req,res) => {
+     db.collection('test').find().toArray()
+    .then(results => {
+      console.log(results)
+    })
+    .catch(error => console.error(error))
+
+     res.render('index');
+
+});
 // app.use(express.urlencoded({ extended: true }));
 app.post('/', Track.addActivity);
+
+//Get all activities route
+app.get('/activities', Track.getActivities);
+
+app.get('/activities/:id', Track.getActivity);
+
+app.delete('/activities/:id', Track.deleteActivity);
+
+
+
 
 // Post Route async
 // app.post('/', async (req,res) =>{

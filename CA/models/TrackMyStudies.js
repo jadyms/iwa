@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Schema = new mongoose.Schema({
     category:{
         type: String,
