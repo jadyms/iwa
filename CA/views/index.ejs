@@ -99,17 +99,49 @@
  </div>
 
   <!-- Page Content -->
- <ul class="todo-list">
+
+  <table class="table table-striped">
+<thead>
+<tr>
+<th></th>
+<th>Assignement</th>
+<th>Hours Planned</th>
+<th>Hours Done</th>
+</tr>
+</thead>
+<tbody>
+<%activity.forEach(function(activity) {%>
+<tr>
+<td>
+    <a href="/put/<%= activity._id %>" class="edit"><span class="fas fa-edit"></span>
+    <a href="/delete/<%= activity._id %>" class="remove"><span class="fas fa-times"></span>
+</td>
+<td><%=activity.assignement%></td>
+<td><%=activity.hoursPlanned%></td>
+<td><%=activity.hoursDone%></td>
+</tr>
+<%});%>
+</tbody>
+</table>
+ 
+
+<ul class="todo-list">
+<% activity.forEach(activity => { %>
 <li class="todo-list-item">
-<div class="todo-list-item-name">Some Text</div>
-<a href="" class="edit">
+<div class="todo-list-item-name"><%= activity.assignement %></div>
+
 <span class="fas fa-edit"></span>
 </a>
-<a href="" class="remove">
+
 <span class="fas fa-times"></span>
 </a>
 </li>
+<% }) %>
 </ul>
+
+    
+        
+    
 
   <!-- Bottom navbar -->
   <nav class="navbar  py-0 fixed-bottom navbar-light" id="bottomNav" style="background-color: rgb(240, 186, 8)">  

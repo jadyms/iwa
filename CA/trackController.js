@@ -19,8 +19,11 @@ exports.getActivities = function(req, res) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(activity);
+     res.render('index.ejs',{activity: activity});
+
+    // res.json(activity);
   }); 
+      
 };
 
 //Get specific activity by id
@@ -30,8 +33,11 @@ exports.getActivity= function(req, res) {
       res.status(400).json(err);
     } 
     res.json(user);
+   
   }); 
 };
+
+
 
 //Delete activity by id
 exports.deleteActivity = function(req, res) {

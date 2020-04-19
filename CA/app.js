@@ -50,21 +50,24 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
 
 //Post route
 
-app.get("/", (req,res) => {
-     db.collection('test').find().toArray()
-    .then(results => {
-      console.log(results)
-    })
-    .catch(error => console.error(error))
+// app.get("/", (req,res) => {
+//      db.collection('test').find().toArray()
+//     .then(results => {
+//       console.log(results)
+//     })
+//     .catch(error => console.error(error))
 
-     res.render('index');
+//      res.render('index');
 
-});
+// });
 // app.use(express.urlencoded({ extended: true }));
 app.post('/', Track.addActivity);
 
 //Get all activities route
 app.get('/activities', Track.getActivities);
+
+//Get all activities route
+app.get('/', Track.getActivities);
 
 //Get Specific activity by id
 app.get('/activities/:id', Track.getActivity);
