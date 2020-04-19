@@ -61,7 +61,8 @@
     </nav>
   
   <!-- Jumbotron -->
-   <div class="container sticky-top "> 
+  
+   <div class="container sticky-top"> 
     <section id="jumbotron" class="jumbotron text-center mt-5">
       <h2> Track My Studies</h2>
       <p><i class="fas fa-pen"></i>Add activities. Manage your studies</p>
@@ -99,7 +100,8 @@
  </div>
 
   <!-- Page Content -->
-
+<div class="todo-container">
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
   <table class="table table-striped">
 <thead>
 <tr>
@@ -123,21 +125,10 @@
 <%});%>
 </tbody>
 </table>
- 
+</div>
+</div>
 
-<ul class="todo-list">
-<% activity.forEach(activity => { %>
-<li class="todo-list-item">
-<div class="todo-list-item-name"><%= activity.assignement %></div>
 
-<span class="fas fa-edit"></span>
-</a>
-
-<span class="fas fa-times"></span>
-</a>
-</li>
-<% }) %>
-</ul>
 
     
         

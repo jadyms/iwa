@@ -31,12 +31,7 @@ body {
     padding-top: 0;
     margin-top: 1%;
 }
- .container-table {
-  max-height: 300px;
-  overflow: scroll;
-  margin-left: 10%;
-  margin-right: 10%;
-}
+
 table th{
     position: sticky;
 }
@@ -46,6 +41,7 @@ table th{
 		background-position: right;
     color:white;
        padding: 0.5em 0.6em;
+       position: relative;
 }
 
 #jumbotron p{
@@ -88,11 +84,6 @@ table {
     line-height:1px;
          
 }
-tr {
-
-
-height:0.2px;               
-}
 
 .dropup {margin-top:120px;}
 
@@ -103,11 +94,15 @@ height:0.2px;
 }
  td, th {
      border: 1px solid #999;
-     padding: 0.5rem;
+     /* padding: 0.5rem; */
      text-align: center;
+     height:0.2px;
+     
 }
  th {
      font-weight: bold;
+     
+
 }
 .form-group  {
   display: inline;
@@ -123,22 +118,34 @@ img {
  
 }
 
+.my-custom-scrollbar {
+position: relative;
+height: 350px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+width: 800px;
+
+
+}
+
 /* New table styling  https://medium.com/@diogo.fg.pinheiro/simple-to-do-list-app-with-node-js-and-mongodb-chapter-1-c645c7a27583*/
 
-* {
+/* * {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-}
+} */
 
 .todo-container {
 color: white;
-position: absolute;
+position: relative;
 top:50%;
 left: 50%;
 padding: 20px;
-width: 600px;
-transform: translate(-50%,-50%);
+width: 900px;
+transform: translate(-50%, -5%);
 background: rgba(255, 255, 255, 0.1);
 border-radius: 20px;
 display: flex;
