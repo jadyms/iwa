@@ -51,24 +51,33 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
 // app.post('/', Track.addActivity);
 
 app.post('/',async (req, res) => {
-const todoTask = new trackModel({
-content: req.body.content
-});
+const todoTask = new trackModel(
+//content: req.body.content
+req.body
+);
 try {
 await todoTask.save();
-res.json(todoTask);
-res.redirect("/");
+// res.json(todoTask);
+console.log("saved");
+return res.redirect('/');
 
 } catch (err) {
-res.redirect("/");
+    console.log(req.status);
+// res.redirect("/activities", res.json(todoTask));
 }
 });
 
-//Get all activities route
-app.get('/activities', Track.getActivities);
+app.get("/", (req, res) => {
+trackModel.find({}, (err, activity) => {
+res.render("index", { activity: activity});
+});
+});
 
 //Get all activities route
-app.get('/', Track.getActivities);
+// app.get('/activities', Track.getActivities);
+
+//Get all activities route
+// app.get('/', Track.getActivities);
 
 //Get Specific activity by id
 app.get('/activities/:id', Track.getActivity);
