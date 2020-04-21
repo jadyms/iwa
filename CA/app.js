@@ -35,20 +35,6 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
 });
     })
 
-
-    //Default route
-// app.get('/', function(req, res){
-
-//     res.render('index');
-
-// });
-
-// app.post('/getJson',function(req,res){
-
-//     console.log(res.body.foo);
-
-// });
-
 //Post route
 
 // app.get("/", (req,res) => {
@@ -62,7 +48,21 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
 
 // });
 // app.use(express.urlencoded({ extended: true }));
-app.post('/', Track.addActivity);
+// app.post('/', Track.addActivity);
+
+app.post('/',async (req, res) => {
+const todoTask = new trackModel({
+content: req.body.content
+});
+try {
+await todoTask.save();
+res.json(todoTask);
+res.redirect("/");
+
+} catch (err) {
+res.redirect("/");
+}
+});
 
 //Get all activities route
 app.get('/activities', Track.getActivities);
