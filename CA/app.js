@@ -1,5 +1,6 @@
 // Code from Mikhail - available at:
 // https://github.com/mikhail-cct/CA1-In-class-Demo/blob/master/app.js
+const dotenv = require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -9,7 +10,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
-const dotenv = require('dotenv').config();
+
 const mongoose = require('mongoose');
 const trackModel = require('./models/TrackMyStudies');
 const Track = require('./trackController');
