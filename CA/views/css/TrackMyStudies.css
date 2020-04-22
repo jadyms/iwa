@@ -9,7 +9,7 @@ body {
     background-color: rgba(243, 190, 76, 0.712);
     padding-bottom: 50px;
 }
-
+input::placeholder { font-style: italic; }
 .card-img-top {
     width: 96%;
     height: 4vw;
