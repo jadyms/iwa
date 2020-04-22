@@ -89,7 +89,7 @@ app.route("/put/:id").get((req, res) => {
     });
 }).post((req, res) => {
     const id = req.params.id;
-    trackModel.findByIdAndUpdate(id, { content: req.body }, err => {
+    trackModel.findByIdAndUpdate(id, req.body, {new: true}, err => {
         console.log(req.body);
 if (err) return res.send(500, err);
 return res.redirect("/");

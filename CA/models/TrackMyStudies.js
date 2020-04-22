@@ -11,12 +11,13 @@ const Schema = new mongoose.Schema({
     },
     hoursPlanned: {
         type: String,
-        required: true,
+        // required: true,
     },
     hoursDone: {
         type: String,
-        required: true,
+        // required: true,
     }
+    
 })
 
 module.exports = mongoose.model('TrackMyStudies', Schema );

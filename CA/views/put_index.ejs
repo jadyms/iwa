@@ -105,7 +105,7 @@
   <table class="table table-striped">
 <thead>
 <tr>
-<th></th>
+<th>Options</th>
 <th>Assignement</th>
 <th>Hours Planned</th>
 <th>Hours Done</th>
@@ -115,19 +115,34 @@
 <%activity.forEach(function(activity) {%>
 <%if (activity._id== idTask){%>
 <tr>
+<td></td>
+<!-- <td><%=activity.assignement%></td> -->
 <td>
     <form action="/put/<%= activity._id %>" method="POST">
-    <input type="text" value="<%activity.assignement%>" name = "content">
+    <input type="text" value="<%activity.assignement%>" name = "assignement">
     <button type="submit">Confirm</button>
+    <a href="/" class="cancel">Cancel</a>
     </form>
     <!-- <a href="/put/<%= activity._id %>" class="edit"><span class="fas fa-edit"></span> -->
     <!-- <a href="/delete/<%= activity._id %>" class="remove"><span class="fas fa-times"></span> -->
 </td>
-<% }  %>
+<td><%=activity.hoursPlanned%></td>
+<td><%=activity.hoursDone%></td>
+</tr>
+
+<% } else { %>
+<tr>
+<td>
+    <a href="/put/<%= activity._id %>" class="edit"><span class="fas fa-edit"></span>
+    <a href="/delete/<%= activity._id %>" class="remove"><span class="fas fa-times"></span>
+</td>
 <td><%=activity.assignement%></td>
 <td><%=activity.hoursPlanned%></td>
 <td><%=activity.hoursDone%></td>
 </tr>
+
+<%}%>
+
 <%});%>
 </tbody>
 </table>
