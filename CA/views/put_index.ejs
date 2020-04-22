@@ -106,7 +106,7 @@
 <thead>
 <tr>
 <th>Options</th>
-<th>Assignement</th>
+<th>Assignment</th>
 <th>Hours Planned</th>
 <th>Hours Done</th>
 </tr>
@@ -117,17 +117,19 @@
 <tr>
 <td></td>
 <!-- <td><%=activity.assignement%></td> -->
-<td>
+<!-- <td> -->
     <form action="/put/<%= activity._id %>" method="POST">
-    <input type="text" value="<%activity.assignement%>" name = "assignement">
+   <td> <input type="text" value="<%activity.assignement%>" name = "assignement"></td>
+   <td> <input type="text" value="<%activity.hoursPlanned%>" name = "hoursPlanned"></td>
+      <td> <input type="text" value="<%activity.hoursDone%>" name = "hoursDone">
     <button type="submit">Confirm</button>
-    <a href="/" class="cancel">Cancel</a>
+    <a href="/" class="cancel">Cancel</a></td>
     </form>
     <!-- <a href="/put/<%= activity._id %>" class="edit"><span class="fas fa-edit"></span> -->
     <!-- <a href="/delete/<%= activity._id %>" class="remove"><span class="fas fa-times"></span> -->
-</td>
-<td><%=activity.hoursPlanned%></td>
-<td><%=activity.hoursDone%></td>
+<!-- </td> -->
+<!-- <td><%=activity.hoursPlanned%></td> -->
+<!-- <td><%=activity.hoursDone%></td> -->
 </tr>
 
 <% } else { %>
