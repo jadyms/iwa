@@ -73,6 +73,32 @@ res.render("index", { activity: activity});
 });
 });
 
+app.route("/delete/:id").get((req, res) => {
+const id = req.params.id;
+trackModel.findByIdAndRemove(id, err => {
+if (err) return res.send(500, err);
+res.redirect("/");
+});
+});
+
+//UPDATE
+app.route("/put/:id").get((req, res) => {
+    const id = req.params.id;
+    trackModel.find({}, (err, activity) => {
+        res.render("put_index", { activity: activity, idTask: id });
+    });
+}).post((req, res) => {
+    const id = req.params.id;
+    trackModel.findByIdAndUpdate(id, { content: req.body }, err => {
+        console.log(req.body);
+if (err) return res.send(500, err);
+return res.redirect("/");
+});
+});
+
+
+
+
 //Get all activities route
 // app.get('/activities', Track.getActivities);
 
@@ -83,7 +109,7 @@ res.render("index", { activity: activity});
 app.get('/activities/:id', Track.getActivity);
 
 //Delete by id
-app.delete('/activities/:id', Track.deleteActivity);
+// app.delete('/activities/:id', Track.deleteActivity);
 
 //Update by id
 app.put('/activities/:id', Track.updateActivity);
@@ -121,27 +147,6 @@ app.put('/activities/:id', Track.updateActivity);
 // var server = http.createServer(router); //This is where our server gets created
 
 //router.use(express.json()); //We include support for JSON that is coming from the client
-
-
-// Function to read in XML file and convert it to JSON
-// function xmlFileToJs(filename, cb) {
-//   var filepath = path.normalize(path.join(__dirname, filename));
-//   fs.readFile(filepath, 'utf8', function(err, xmlStr) {
-//     if (err) throw (err);
-//     xml2js.parseString(xmlStr, {}, cb);
-//   });
-// }
-
-//Function to convert JSON to XML and save it
-// function jsToXmlFile(filename, obj, cb) {
-//   var filepath = path.normalize(path.join(__dirname, filename));
-//   var builder = new xml2js.Builder();
-//   var xml = builder.buildObject(obj);
-//   fs.writeFile(filepath, xml, cb);
-// }
-
-
-
 
 
 // // POST request to add to JSON & XML files
