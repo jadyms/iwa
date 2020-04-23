@@ -16,7 +16,8 @@ const trackModel = require('./models/TrackMyStudies');
 const Track = require('./trackController');
 
 
-app.use(express.static(path.resolve(__dirname, 'views'))); //We define the views folder as the one where all static content will be served
+app.use(express.static('views'));
+// app.use(express.static(path.resolve(__dirname, 'views'))); //We define the views folder as the one where all static content will be served
 //app.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be coming in as part of the URL in GET and POST requests
 
 
