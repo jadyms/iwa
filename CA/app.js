@@ -1,29 +1,21 @@
 // Code from Mikhail - available at:
 // https://github.com/mikhail-cct/CA1-In-class-Demo/blob/master/app.js
-const dotenv = require('dotenv').config();
-const express = require('express');
-const app = express();
+const dotenv = require('dotenv').config(); //Credentials for MongoDB
+const express = require('express'); //require Express
+const app = express(); //Assign express function
+const mongoose = require('mongoose'); //MongoDB connection using mongoose module
+const trackModel = require('./models/TrackMyStudies');// Collection Schema
+const Track = require('./trackController'); //Middleware controller
 const path = require('path');
 const bodyParser = require('body-parser');
-app.set("view engine", "ejs");
+app.set("view engine", "ejs");//Template engine to render html
+
+app.use(express.static('views')); //Serving static files
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 
-const mongoose = require('mongoose');
-const trackModel = require('./models/TrackMyStudies');
-const Track = require('./trackController');
-
-
-app.use(express.static('views'));
-// app.use(express.static(path.resolve(__dirname, 'views'))); //We define the views folder as the one where all static content will be served
-//app.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be coming in as part of the URL in GET and POST requests
-
-
-
-
-mongoose.set("useFindAndModify", false);
 
 //Database Connection
 mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
@@ -33,8 +25,46 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
         //Connection to the server only happens after DB connection
         app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
        console.log("Server listening");
+        });
+})
+
+mongoose.set("useFindAndModify", false); //Suppress deprecated warning message
+
+
+//POST ROUTE
+app.post('/',async (req, res) => {
+    const todoTask = new trackModel(
+//content: req.body.content
+req.body
+);
+try {
+await todoTask.save();
+// res.json(todoTask);
+console.log("saved");
+return res.redirect('/');
+
+} catch (err) {
+    console.log(req.status);
+// res.redirect("/activities", res.json(todoTask));
+}
 });
-    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Post route
 
@@ -51,22 +81,7 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
 // app.use(express.urlencoded({ extended: true }));
 // app.post('/', Track.addActivity);
 
-app.post('/',async (req, res) => {
-const todoTask = new trackModel(
-//content: req.body.content
-req.body
-);
-try {
-await todoTask.save();
-// res.json(todoTask);
-console.log("saved");
-return res.redirect('/');
 
-} catch (err) {
-    console.log(req.status);
-// res.redirect("/activities", res.json(todoTask));
-}
-});
 
 app.get("/", (req, res) => {
 trackModel.find({}, (err, activity) => {
@@ -74,7 +89,7 @@ res.render("index", { activity: activity});
 });
 });
 
-app.route("/delete/:id").get((req, res) => {
+app.route("/activities/:id").get((req, res) => {
 const id = req.params.id;
 trackModel.findByIdAndRemove(id, err => {
 if (err) return res.send(500, err);
@@ -90,7 +105,9 @@ app.route("/put/:id").get((req, res) => {
     });
 }).post((req, res) => {
     const id = req.params.id;
-    trackModel.findByIdAndUpdate(id, req.body, {new: true}, err => {
+    trackModel.findOneAndUpdate(id, req.body, {new: true}, err => {
+    // trackModel.findByIdAndUpdate(id, req.body, {new: true}, err => {
+    
         console.log(req.body);
 if (err) return res.send(500, err);
 return res.redirect("/");
@@ -107,13 +124,13 @@ return res.redirect("/");
 // app.get('/', Track.getActivities);
 
 //Get Specific activity by id
-app.get('/activities/:id', Track.getActivity);
+// app.get('/activities/:id', Track.getActivity);
 
 //Delete by id
 // app.delete('/activities/:id', Track.deleteActivity);
 
 //Update by id
-app.put('/activities/:id', Track.updateActivity);
+// app.put('/activities/:id', Track.updateActivity);
 
 
 
