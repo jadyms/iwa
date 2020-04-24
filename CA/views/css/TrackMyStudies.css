@@ -126,10 +126,14 @@ overflow: auto;
 .table-wrapper-scroll-y {
 display: block;
 width: 800px;
-
-
 }
 
+.fa-edit{
+    color: blue;
+}
+.fa-times{
+    color: red;
+}
 /* New table styling  https://medium.com/@diogo.fg.pinheiro/simple-to-do-list-app-with-node-js-and-mongodb-chapter-1-c645c7a27583*/
 
 /* * {

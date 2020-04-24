@@ -71,23 +71,23 @@
             <!--Top Form -->
             <form action="/" method="POST" class="form-inline justify-content-center" role="form">
             <!-- <form enctype="application/json" action="/post/json" method="post" class="form-inline justify-content-center" role="form"> -->
-               <div class="form-group">
+               <!-- <div class="form-group">
                 <select class="form-control" name="sec_n" id="foo">
                     <option value="0">Databases</option>
                     <option value="1">IWA</option>
                     <option value="2">Data Structure</option>
                     <option value="3">Lab</option>
                 </select>
-               </div>     
+               </div>      -->
                <label class="sr-only" for="inlineFormInputName2">Subject</label>
-                 <input type="text" name="assignement" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Add an activity"/>
+                 <input type="text" required name="assignement" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Add an activity"/>
                   <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
                       <div class="input-group-text ">Time</div>
                     </div>
                        <div class="col-xs-2">
-                        <input type="text" value="" name="hoursPlanned" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Planned"/>
-                        <input type="text" name="hoursDone" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Done"/>
+                        <input type="text" required value="" name="hoursPlanned" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Planned"/>
+                        <input type="text" required name="hoursDone" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Done"/>
                     </div>
                    </div>
                         <button type="submit" class="btn btn-outline-light mb-2">Add new activity</button>
@@ -115,8 +115,8 @@
 <%activity.forEach(function(activity) {%>
 <tr>
 <td>
-    <a href="/put/<%= activity._id %>" class="edit"><span class="fas fa-edit"></span>
-    <a href="/delete/<%= activity._id %>" class="remove"><span class="fas fa-times"></span>
+    <a href="/put/<%= activity._id %>" class="edit" title="Edit"><span class="fas fa-edit"></span>
+    <a href="/delete/<%= activity._id %>" class="remove" title="Delete"><span class="fas fa-times"></span>
 </td>
 <td><%=activity.assignement%></td>
 <td><%=activity.hoursPlanned%></td>
