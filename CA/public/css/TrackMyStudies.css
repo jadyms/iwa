@@ -134,6 +134,9 @@ width: 800px;
 .fa-times{
     color: red;
 }
+.fa-trash-alt{
+    color: #dc3545;
+}
 /* New table styling  https://medium.com/@diogo.fg.pinheiro/simple-to-do-list-app-with-node-js-and-mongodb-chapter-1-c645c7a27583*/
 
 /* * {

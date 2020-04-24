@@ -71,7 +71,7 @@
    <td> <input type="text"  value="<%activity.assignement%>" name = "assignement" placeholder="<%=activity.assignement%>" required></td>
    <td> <input type="text" required value="<%activity.hoursPlanned%>" name = "hoursPlanned" placeholder="<%=activity.hoursPlanned%>"></td>
       <td> <input type="text" required value="<%activity.hoursDone%>" name = "hoursDone" placeholder="<%=activity.hoursDone%>">
-    <button type="submit" title="Confirm" class="btn-success"><span><i class="fas fa-check"></i></span></button>
+    <button type="submit" title="Confirm" formaction="/display" class="btn-success"><span><i class="fas fa-check"></i></span></button>
     <!-- <button type="/" label="cancel"><span><i class="fas fa-window-close"></i></span></button> -->
     <a href="/" class="remove" title="Cancel"><span class="fas fa-times"></span>  </td>
     </form>
@@ -86,7 +86,7 @@
 <tr>
 <td>
     <a href="/put/<%= activity._id %>" class="edit" title="Edit"><span class="fas fa-edit"></span>
-    <a href="/activities/<%= activity._id %>" class="remove" title="Delete"><span class="fas fa-times"></span>
+    <a href="/activities/<%= activity._id %>" class="remove" title="Delete"><span> <i class="fas fa-trash-alt"></i></span>
 </td>
 <td><%=activity.assignement%></td>
 <td><%=activity.hoursPlanned%></td>

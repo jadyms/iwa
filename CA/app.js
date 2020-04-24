@@ -38,10 +38,36 @@ mongoose.set("useFindAndModify", false); //Suppress deprecated warning message
 const allActivitiesController = require('./controllers/allAssignments');
 const addAssignment = require('./controllers/addAssignment');
 const deleteAssignment = require('./controllers/deleteAssignment');
+const updateAssignment = require('./controllers/updateAssignment');
+const displayAssignment = require('./controllers/displayAssignment');
 
 app.get('/', allActivitiesController);//get and display all stored data 
 app.post('/', addAssignment); //add new assignment to the list
-app.get('/activities/:id', deleteAssignment);
+app.get('/activities/:id', deleteAssignment); //delete assignment from the list
+app.get('/put/:id', updateAssignment) //update assignment
+app.post('/display', displayAssignment);//display updates assignment
+
+
+
+//UPDATE
+// app.route("/put/:id").get((req, res) => {
+//     const id = req.params.id;
+//     trackModel.find({}, (err, activity) => {
+//         res.render("put_index", { activity: activity, idTask: id });
+//     });
+// }).post((req, res) => {
+//     const id = req.params.id;
+//     trackModel.findOneAndUpdate(id, req.body, {new: true}, err => {
+//     // trackModel.findByIdAndUpdate(id, req.body, {new: true}, err => {
+    
+//         console.log(req.body);
+// if (err) return res.send(500, err);
+// return res.redirect("/");
+// });
+// });
+
+
+
 // app.route("/activities/:id").get((req, res) => {
 // const id = req.params.id;
 // trackModel.findByIdAndRemove(id, err => {
@@ -110,23 +136,6 @@ app.get('/activities/:id', deleteAssignment);
 // });
 // });
 
-
-//UPDATE
-app.route("/put/:id").get((req, res) => {
-    const id = req.params.id;
-    trackModel.find({}, (err, activity) => {
-        res.render("put_index", { activity: activity, idTask: id });
-    });
-}).post((req, res) => {
-    const id = req.params.id;
-    trackModel.findOneAndUpdate(id, req.body, {new: true}, err => {
-    // trackModel.findByIdAndUpdate(id, req.body, {new: true}, err => {
-    
-        console.log(req.body);
-if (err) return res.send(500, err);
-return res.redirect("/");
-});
-});
 
 
 
