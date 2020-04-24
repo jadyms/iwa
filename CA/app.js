@@ -25,7 +25,7 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
         console.log("Connected to MongoDB");
 
         //Connection to the server only happens after DB connection
-        app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
+        app.listen(process.env.PORT || 3005, process.env.IP || "0.0.0.0", function() {
        console.log("Server listening");
         });
 })
