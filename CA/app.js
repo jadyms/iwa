@@ -7,13 +7,15 @@ const mongoose = require('mongoose'); //MongoDB connection using mongoose module
 const trackModel = require('./models/TrackMyStudies');// Collection Schema
 const Track = require('./trackController'); //Middleware controller
 const path = require('path');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');//To handle the incoming requests from the browser
+// Express middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 app.set("view engine", "ejs");//Template engine to render html
 
 app.use(express.static('public')); //Serving static files
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+
 
 
 
@@ -29,25 +31,43 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser : true},
 })
 
 mongoose.set("useFindAndModify", false); //Suppress deprecated warning message
+/*
+ CONTROLLERS
+*/
+
+const allActivitiesController = require('./controllers/allAssignments');
+const addAssignment = require('./controllers/addAssignment');
+const deleteAssignment = require('./controllers/deleteAssignment');
+
+app.get('/', allActivitiesController);//get and display all stored data 
+app.post('/', addAssignment); //add new assignment to the list
+app.get('/activities/:id', deleteAssignment);
+// app.route("/activities/:id").get((req, res) => {
+// const id = req.params.id;
+// trackModel.findByIdAndRemove(id, err => {
+// if (err) return res.send(500, err);
+// res.redirect("/");
+// });
+// });
 
 
-//POST ROUTE
-app.post('/',async (req, res) => {
-    const todoTask = new trackModel(
-//content: req.body.content
-req.body
-);
-try {
-await todoTask.save();
-// res.json(todoTask);
-console.log("saved");
-return res.redirect('/');
+//POST ROUTE 
+// app.post('/',async (req, res) => {
+//     const todoTask = new trackModel(
+// //content: req.body.content
+// req.body
+// );
+// try {
+// await todoTask.save();
+// // res.json(todoTask);
+// console.log("saved");
+// return res.redirect('/');
 
-} catch (err) {
-    console.log(req.status);
-// res.redirect("/activities", res.json(todoTask));
-}
-});
+// } catch (err) {
+//     console.log(req.status);
+// // res.redirect("/activities", res.json(todoTask));
+// }
+// });
 
 
 
@@ -83,19 +103,13 @@ return res.redirect('/');
 
 
 
-app.get("/", (req, res) => {
-trackModel.find({}, (err, activity) => {
-res.render("index", { activity: activity});
-});
-});
 
-app.route("/activities/:id").get((req, res) => {
-const id = req.params.id;
-trackModel.findByIdAndRemove(id, err => {
-if (err) return res.send(500, err);
-res.redirect("/");
-});
-});
+// app.get("/", (req, res) => {
+// trackModel.find({}, (err, activity) => {
+// res.render("index", { activity: activity});
+// });
+// });
+
 
 //UPDATE
 app.route("/put/:id").get((req, res) => {

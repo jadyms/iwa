@@ -20,14 +20,14 @@
             <!--Top Form -->
             <form action="/" method="POST" class="form-inline justify-content-center" role="form">
             <!-- <form enctype="application/json" action="/post/json" method="post" class="form-inline justify-content-center" role="form"> -->
-               <div class="form-group">
+               <!-- <div class="form-group">
                 <select class="form-control" name="sec_n" id="foo">
                     <option value="0">Databases</option>
                     <option value="1">IWA</option>
                     <option value="2">Data Structure</option>
                     <option value="3">Lab</option>
                 </select>
-               </div>     
+               </div>      -->
                <label class="sr-only" for="inlineFormInputName2">Subject</label>
                  <input type="text" name="assignement" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Add an activity"/>
                   <div class="input-group mb-2 mr-sm-2">
@@ -86,7 +86,7 @@
 <tr>
 <td>
     <a href="/put/<%= activity._id %>" class="edit" title="Edit"><span class="fas fa-edit"></span>
-    <a href="/delete/<%= activity._id %>" class="remove" title="Delete"><span class="fas fa-times"></span>
+    <a href="/activities/<%= activity._id %>" class="remove" title="Delete"><span class="fas fa-times"></span>
 </td>
 <td><%=activity.assignement%></td>
 <td><%=activity.hoursPlanned%></td>
