@@ -1,65 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-   <title>Track My Studies</title>
-
-    <!-- Bootstrap and CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/TrackMyStudies.css" rel="stylesheet" type="text/css" />
- 
-    <!-- Font Awesome - using my own kit -->
-    <script src="https://kit.fontawesome.com/5c19bf284e.js" crossorigin="anonymous"></script>
-
-   <!-- Google Fonts -->
-   <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet"/>
-
-    <!-- JavaScript functions -->
-    <!-- <script src="js/TrackMyStudies.js"></script> -->
-
-    <!-- JS function when page is loaded-->
-    <!-- <script>
-        window.addEventListener("load", function() {
-            //Sum of the hours
-          let {fHourTotal, pHourTotal}  = calculateHour('menuTable');
-            document.forms[1].txtHourPlanned.value =fHourTotal; 
-            document.forms[1].txtHourDone.value =pHourTotal; 
-            //Display the sum
-            document.querySelector("#calcHour").addEventListener("click", function() {
-                  let {fHourTotal, pHourTotal}  = calculateHour('menuTable');
-                  document.forms[1].txtHourPlanned.value=  fHourTotal;
-                  document.forms[1].txtHourDone.value= pHourTotal;
-            });
-        });
-    </script> -->
-</head>
-
+<%- include('layouts/headers');%>
+  
 <body>
   <!-- Using some NavBar funcionalities from previous self-development project -->
   <!-- http://www.jadysilva.com -->
   <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-dark navbar-expand-md py-0 fixed-top" >
-     <a href="#" class="navbar-brand"><i class="fas fa-book"></i></span> TMS</a>
-     <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navbar" >
-       <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="navLinks">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a href="/" class="nav-link">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a href="about.html" class="nav-link">ABOUT</a>
-        </li>
-      </ul>
-    </div>
-    </nav>
-  
+        
+  <%- include('layouts/navbar');%>
   <!-- Jumbotron -->
   
    <div class="container sticky-top"> 
@@ -144,9 +93,6 @@
     </form>
   </nav>
                     
- <!-- Bootstrap core JavaScript -->
-  <script src="jquery/jquery.min.js"></script>
-  <!-- <script src="jquery/table.js"></script> -->
-  <script src="js/bootstrap.min.js"></script>
+ <%- include('layouts/scripts');%>
 </body>
 </html>

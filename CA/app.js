@@ -10,7 +10,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 app.set("view engine", "ejs");//Template engine to render html
 
-app.use(express.static('views')); //Serving static files
+app.use(express.static('public')); //Serving static files
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
