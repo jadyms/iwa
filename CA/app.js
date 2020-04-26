@@ -4,7 +4,6 @@ const express = require('express'); //require Express
 const app = express(); //Assign express function
 const mongoose = require('mongoose'); //MongoDB connection using mongoose module
 const trackModel = require('./models/TrackMyStudies');// Collection Schema
-const Track = require('./trackController'); //Middleware controller
 // const path = require('path');
 const bodyParser = require('body-parser');//To handle the incoming requests from the browser
 // Express middleware
