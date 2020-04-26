@@ -1,89 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Headers -->
 <%- include('layouts/headers');%>
   
 <body>
-  <!-- Using some NavBar funcionalities from previous self-development project -->
-  <!-- http://www.jadysilva.com -->
-  <!-- Navigation -->
-        
+  <!--NavBar  -->
   <%- include('layouts/navbar');%>
+
   <!-- Jumbotron -->
-  
-   <div class="container sticky-top"> 
-    <section id="jumbotron" class="jumbotron text-center mt-5">
-      <h2> Track My Studies</h2>
-      <p><i class="fas fa-pen"></i>Add activities. Manage your studies</p>
-        <div class="container-fluid">
-           
-            <!--Top Form -->
-            <form action="/" method="POST" class="form-inline justify-content-center" role="form">
-            <!-- <form enctype="application/json" action="/post/json" method="post" class="form-inline justify-content-center" role="form"> -->
-               <!-- <div class="form-group">
-                <select class="form-control" name="sec_n" id="foo">
-                    <option value="0">Databases</option>
-                    <option value="1">IWA</option>
-                    <option value="2">Data Structure</option>
-                    <option value="3">Lab</option>
-                </select>
-               </div>      -->
-               <label class="sr-only" for="inlineFormInputName2">Subject</label>
-                 <input type="text" required name="assignement" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Add an activity"/>
-                  <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text ">Time</div>
-                    </div>
-                       <div class="col-xs-2">
-                        <input type="text" required value="" name="hoursPlanned" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Planned"/>
-                        <input type="text" required name="hoursDone" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Done"/>
-                    </div>
-                   </div>
+    <div class="container sticky-top"> 
+        <section id="jumbotron" class="jumbotron text-center mt-5">
+            <h2> Track My Studies</h2>
+             <p><i class="fas fa-pen"></i>Add activities. Manage your studies</p>
+                <div class="container-fluid">
+                    <!--Top Form -->
+                    <form action="/" method="POST" class="form-inline justify-content-center" role="form">
+                        <label class="sr-only" for="inlineFormInputName2">Subject</label>
+                        <input type="text" required name="assignement" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Add an activity"/>
+                          <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text ">Time</div>
+                            </div>
+                            <div class="col-xs-2">
+                                <input type="text" required value="" name="hoursPlanned" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Planned"/>
+                                <input type="text" required name="hoursDone" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Done"/>
+                            </div>
+                           </div>
                         <button type="submit" class="btn btn-outline-light mb-2">Add new activity</button>
                 </form>
-
-                     <!-- <p><i class="fas fa-trash-alt"></i> Select an activity to be deleted</p>
-                     <button id="delete" class="btn btn-outline-light mb-2">Delete activity</button> -->
             </div>
     </section>
  </div>
 
   <!-- Page Content -->
-<div class="todo-container">
-<div class="table-wrapper-scroll-y my-custom-scrollbar">
-  <table class="table table-striped">
-<thead>
-<tr>
-<th></th>
-<th>Assignment</th>
-<th>Hours Planned</th>
-<th>Hours Done</th>
-</tr>
-</thead>
-<tbody>
-<%activity.forEach(function(activity) {%>
-<tr>
-<td>
-    <a href="/put/<%= activity._id %>" class="edit" title="Edit"><span class="fas fa-edit"></span>
-    <a href="/activities/<%= activity._id %>" class="remove" title="Delete"><span> <i class="fas fa-trash-alt"></i></span>
-</td>
-<td><%=activity.assignement%></td>
-<td><%=activity.hoursPlanned%></td>
-<td><%=activity.hoursDone%></td>
-</tr>
-<%});%>
-</tbody>
-</table>
-</div>
-</div>
+    <div class="todo-container">
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Assignment</th>
+                    <th>Hours Planned</th>
+                    <th>Hours Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%activity.forEach(function(activity) {%>
+                    <tr>
+                        <td>
+                            <a href="/put/<%= activity._id %>" class="edit" title="Edit"><span class="fas fa-edit"></span>
+                            <a href="/activities/<%= activity._id %>" class="remove" title="Delete"><span> <i class="fas fa-trash-alt"></i></span>
+                        </td>
+                        <td><%=activity.assignement%></td>
+                        <td><%=activity.hoursPlanned%></td>
+                        <td><%=activity.hoursDone%></td>
+                    </tr>
+                <%});%>
+        </tbody>
+    </table>
+    </div>
+    </div>
 
-
-
-    
-        
-    
-
- 
+<!-- Footer -->
  <%- include('layouts/footer');%>                    
  <%- include('layouts/scripts');%>
 </body>

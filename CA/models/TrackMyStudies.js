@@ -1,21 +1,21 @@
+//Mongoose module
 const mongoose = require('mongoose');
 
+//Collection Schema
 const Schema = new mongoose.Schema({
-    category:{
-        type: String,
-        // required: true,
-    },
     assignement:{
+    type: String,
+    required: true,
+    },
+
+    hoursPlanned: {
         type: String,
         required: true,
     },
-    hoursPlanned: {
-        type: String,
-        // required: true,
-    },
+
     hoursDone: {
         type: String,
-        // required: true,
+        required: true,
     }
     
 })

@@ -1,111 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Headers -->
 <%- include('layouts/headers');%>
 
 <body>
-  <!-- Using some NavBar funcionalities from previous self-development project -->
-  <!-- http://www.jadysilva.com -->
+  
   <!-- Navigation -->
       <%- include('layouts/navbar');%>
   
   <!-- Jumbotron -->
-  
-   <div class="container sticky-top"> 
-    <section id="jumbotron" class="jumbotron text-center mt-5">
-      <h2> Track My Studies</h2>
-      <p><i class="fas fa-pen"></i>Add activities. Manage your studies</p>
-        <div class="container-fluid">
-           
+    <div class="container sticky-top"> 
+      <section id="jumbotron" class="jumbotron text-center mt-5">
+            <h2> Track My Studies</h2>
+            <p><i class="fas fa-pen"></i>Add activities. Manage your studies</p>
+            <div class="container-fluid">
+
             <!--Top Form -->
-            <form action="/" method="POST" class="form-inline justify-content-center" role="form">
-            <!-- <form enctype="application/json" action="/post/json" method="post" class="form-inline justify-content-center" role="form"> -->
-               <!-- <div class="form-group">
-                <select class="form-control" name="sec_n" id="foo">
-                    <option value="0">Databases</option>
-                    <option value="1">IWA</option>
-                    <option value="2">Data Structure</option>
-                    <option value="3">Lab</option>
-                </select>
-               </div>      -->
-               <label class="sr-only" for="inlineFormInputName2">Subject</label>
-                 <input type="text" name="assignement" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Add an activity"/>
-                  <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text ">Time</div>
-                    </div>
-                       <div class="col-xs-2">
-                        <input type="text" value="" name="hoursPlanned" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Planned"/>
-                        <input type="text" name="hoursDone" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Done"/>
-                    </div>
-                   </div>
+                <form action="/" method="POST" class="form-inline justify-content-center" role="form">
+                    <label class="sr-only" for="inlineFormInputName2">Subject</label>
+                     <input type="text" name="assignement" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Add an activity"/>
+                        <div class="input-group mb-2 mr-sm-2">
+                             <div class="input-group-prepend">
+                                <div class="input-group-text ">Time</div>
+                            </div>
+                             <div class="col-xs-2">
+                                <input type="text" value="" name="hoursPlanned" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Planned"/>
+                                <input type="text" name="hoursDone" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Hours Done"/>
+                             </div>
+                        </div>
                         <button type="submit" class="btn btn-outline-light mb-2">Add new activity</button>
                 </form>
-
-                     <!-- <p><i class="fas fa-trash-alt"></i> Select an activity to be deleted</p>
-                     <button id="delete" class="btn btn-outline-light mb-2">Delete activity</button> -->
             </div>
     </section>
  </div>
 
   <!-- Page Content -->
 <div class="todo-container">
-<div class="table-wrapper-scroll-y my-custom-scrollbar">
-  <table class="table table-striped">
-<thead>
-<tr>
-<th>Options</th>
-<th>Assignment</th>
-<th>Hours Planned</th>
-<th>Hours Done</th>
-</tr>
-</thead>
-<tbody>
-<%activity.forEach(function(activity) {%>
-<%if (activity._id== idTask){%>
-<tr>
-<td></td>
-<!-- <td><%=activity.assignement%></td> -->
-<!-- <td> -->
-    <form action="/put/<%= activity._id %>" method="POST">
-   <td> <input type="text"  value="<%activity.assignement%>" name = "assignement" placeholder="<%=activity.assignement%>" required></td>
-   <td> <input type="text" required value="<%activity.hoursPlanned%>" name = "hoursPlanned" placeholder="<%=activity.hoursPlanned%>"></td>
-      <td> <input type="text" required value="<%activity.hoursDone%>" name = "hoursDone" placeholder="<%=activity.hoursDone%>">
-    <button type="submit" title="Confirm" formaction="/display" class="btn-success"><span><i class="fas fa-check"></i></span></button>
-    <!-- <button type="/" label="cancel"><span><i class="fas fa-window-close"></i></span></button> -->
-    <a href="/" class="remove" title="Cancel"><span class="fas fa-times"></span>  </td>
-    </form>
-    <!-- <a href="/put/<%= activity._id %>" class="edit"><span class="fas fa-edit"></span> -->
-    <!-- <a href="/delete/<%= activity._id %>" class="remove"><span class="fas fa-times"></span> -->
-<!-- </td> -->
-<!-- <td><%=activity.hoursPlanned%></td> -->
-<!-- <td><%=activity.hoursDone%></td> -->
-</tr>
-
-<% } else { %>
-<tr>
-<td>
-    <a href="/put/<%= activity._id %>" class="edit" title="Edit"><span class="fas fa-edit"></span>
-    <a href="/activities/<%= activity._id %>" class="remove" title="Delete"><span> <i class="fas fa-trash-alt"></i></span>
-</td>
-<td><%=activity.assignement%></td>
-<td><%=activity.hoursPlanned%></td>
-<td><%=activity.hoursDone%></td>
-</tr>
-
-<%}%>
-
-<%});%>
-</tbody>
-</table>
-</div>
-</div>
-
-
-
-    
-        
-    
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Options</th>
+                    <th>Assignment</th>
+                    <th>Hours Planned</th>
+                    <th>Hours Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populate the table -->
+                <%activity.forEach(function(activity) {%>
+                <!-- If the id we look for is in this row -->
+                <%if (activity._id== idTask){%>
+                    <tr>
+                        <td></td>
+                        <!-- Display for for new user input -->
+                         <!-- <form action="/put/<%= activity._id %>" method="POST"> -->
+                            <form action="/display/<%=idTask%>" method="POST">
+                            <td> <input type="text"  value="<%activity.assignement%>" name = "assignement" placeholder="<%=activity.assignement%>" required></td>
+                            <td> <input type="text" required value="<%activity.hoursPlanned%>" name = "hoursPlanned" placeholder="<%=activity.hoursPlanned%>"></td>
+                            <td> <input type="text" required value="<%activity.hoursDone%>" name = "hoursDone" placeholder="<%=activity.hoursDone%>">
+                            <button type="submit" title="Confirm"  class="btn-success"><span><i class="fas fa-check"></i></span></button>
+                            <!-- <button type="submit" title="Confirm" formaction="/display" class="btn-success"><span><i class="fas fa-check"></i></span></button> -->
+                          <a href="/" class="remove" title="Cancel"><span class="fas fa-times"></span>  </td>
+                          </form>
+                    </tr>
+                    <!-- If not, display other rows -->
+                <% } else { %>
+                <tr>
+                    <td>
+                        <a href="/put/<%= activity._id %>" class="edit" title="Edit"><span class="fas fa-edit"></span>
+                        <a href="/activities/<%= activity._id %>" class="remove" title="Delete"><span> <i class="fas fa-trash-alt"></i></span>
+                    </td>
+                    <td><%=activity.assignement%></td>
+                    <td><%=activity.hoursPlanned%></td>
+                    <td><%=activity.hoursDone%></td>
+                </tr>
+                <%}%>
+            <%});%>
+            </tbody>
+        </table>
+    </div>
+    </div>
 
   <!-- Bottom navbar -->
  <%- include('layouts/footer');%>     
